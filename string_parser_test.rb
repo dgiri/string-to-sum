@@ -10,7 +10,7 @@ class StringParserTest < Minitest::Test
     assert_equal 3, StringParser.add('1,2')
   end
 
-  def test_multiple_numbers
-    assert_equal 15, StringParser.add('1,2,3,4,5')
+  def test_with_multiple_numbers
+    assert_equal 25, StringParser.add('1,2,3,4,5,10')
   end
 end
