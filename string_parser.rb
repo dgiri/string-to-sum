@@ -10,8 +10,12 @@ class StringParser
 
       if cleaned_input.start_with?("//")
         del_part, num_part = cleaned_input.split(/\n/, 2)
-        delimiter = del_part[2..-1]
-        cleaned_input = num_part
+        if num_part
+          delimiter = del_part[2..-1]
+          cleaned_input = num_part
+        else
+          return "Input does not have any number"
+        end
       end
 
       # if manually typed \n or keyboard enter
@@ -23,9 +27,9 @@ class StringParser
 
       if negative_numbers.any?
         if negative_numbers.length == 1
-          return "String should not contain negative number like: #{negative_numbers[0]}"
+          return "Input should not contain negative number like: #{negative_numbers[0]}"
         else
-          return "String should not contain negative numbers like: #{negative_numbers.join(',')}"
+          return "Input should not contain negative numbers like: #{negative_numbers.join(',')}"
         end
       end
 
