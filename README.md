@@ -15,4 +15,16 @@ cd string-to-sum
 
 ### Basic Usage
 
-wip...
+Run the demo script:
+
+```bash
+ruby test_parser.rb
+```
+
+### Testing
+
+Run the tests using:
+
+```bash
+ruby string_parser_test.rb
+```
