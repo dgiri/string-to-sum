@@ -27,10 +27,11 @@ class StringParserTest < Minitest::Test
     assert_equal 3, StringParser.add("//:\n1:2")
 
     assert_equal 50, StringParser.add("//:\n1:6\n:12:\n18\n:13")
+    assert_equal "Input does not have any number", StringParser.add("//;")
   end
 
   def test_with_negative_number
-    assert_equal "String should not contain negative number like: -2", StringParser.add("1,-2")
-    assert_equal "String should not contain negative numbers like: -2,-6", StringParser.add("1,-2,5,-6")
+    assert_equal "Input should not contain negative number like: -2", StringParser.add("1,-2")
+    assert_equal "Input should not contain negative numbers like: -2,-6", StringParser.add("1,-2,5,-6")
   end
 end
