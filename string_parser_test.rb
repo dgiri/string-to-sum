@@ -28,4 +28,8 @@ class StringParserTest < Minitest::Test
 
     assert_equal 50, StringParser.add("//:\n1:6\n:12:\n18\n:13")
   end
+
+  def test_with_negative_number
+    assert_equal "String should not contain negative numbers like: -2", StringParser.add("1,-2")
+  end
 end
