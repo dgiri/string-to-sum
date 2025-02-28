@@ -1,6 +1,21 @@
 require_relative 'string_parser'
 
-puts "Enter comma-separated numbers:"
-input = gets.chomp
-result = StringParser.add(input)
-puts "Sum: #{result}"
+test_data = [
+  '',
+  '1',
+  '1,2',
+  '1,2,3,4,5,10',
+  '"2,3,4"',
+  '1\n2,3',
+  '2\n3,4\n\n10',
+  "//;\n1;2",
+  "//:\n1:2",
+  "//:\n1:6\n:12:\n18\n:13",
+]
+
+test_data.each do |str|
+  puts "String: #{str.inspect}"
+  result = StringParser.add(str)
+  puts "Output: #{result}"
+  puts "----------"
+end

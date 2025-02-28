@@ -24,6 +24,8 @@ class StringParserTest < Minitest::Test
 
   def test_with_different_delimiter
     assert_equal 3, StringParser.add("//;\n1;2")
-    assert_equal 3, StringParser.add("//:\n1;2")
+    assert_equal 3, StringParser.add("//:\n1:2")
+
+    assert_equal 50, StringParser.add("//:\n1:6\n:12:\n18\n:13")
   end
 end

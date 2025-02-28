@@ -8,6 +8,12 @@ class StringParser
 
       delimiter = ','
 
+      if cleaned_input.start_with?("//")
+        del_part, num_part = cleaned_input.split(/\n/, 2)
+        delimiter = del_part[2..-1]
+        cleaned_input = num_part
+      end
+
       # if input have \n or keyboard enter
       filter_input = cleaned_input.gsub(/\\n|\n/, delimiter)
 
