@@ -3,7 +3,8 @@ class StringParser
     if num_str.empty?
       return 0
     else
-      num_str.split(',').map(&:to_i).sum
+      cleaned_input = num_str.gsub(/^['"]|['"]$/, '') # if input like '2,3,4' then removes quote
+      cleaned_input.split(',').map(&:to_i).sum
     end
   end
 end
