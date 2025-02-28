@@ -21,4 +21,9 @@ class StringParserTest < Minitest::Test
     assert_equal 6, StringParser.add('1\n2,3')
     assert_equal 19, StringParser.add('2\n3,4\n\n10')
   end
+
+  def test_with_different_delimiter
+    assert_equal 3, StringParser.add("//;\n1;2")
+    assert_equal 3, StringParser.add("//:\n1;2")
+  end
 end
