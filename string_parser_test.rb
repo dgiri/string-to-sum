@@ -30,6 +30,7 @@ class StringParserTest < Minitest::Test
   end
 
   def test_with_negative_number
-    assert_equal "String should not contain negative numbers like: -2", StringParser.add("1,-2")
+    assert_equal "String should not contain negative number like: -2", StringParser.add("1,-2")
+    assert_equal "String should not contain negative numbers like: -2,-6", StringParser.add("1,-2,5,-6")
   end
 end

@@ -14,10 +14,22 @@ class StringParser
         cleaned_input = num_part
       end
 
-      # if input have \n or keyboard enter
+      # if manually typed \n or keyboard enter
       filter_input = cleaned_input.gsub(/\\n|\n/, delimiter)
 
-      filter_input.split(delimiter).map(&:to_i).sum
+      numbers = filter_input.split(delimiter).map(&:to_i)
+
+      negative_numbers = numbers.select { |n| n < 0 }
+
+      if negative_numbers.any?
+        if negative_numbers.length == 1
+          return "String should not contain negative number like: #{negative_numbers[0]}"
+        else
+          return "String should not contain negative numbers like: #{negative_numbers.join(',')}"
+        end
+      end
+
+      numbers.sum
     end
   end
 end
