@@ -11,10 +11,12 @@ test_data = [
   "//;\n1;2",
   "//:\n1:2",
   "//:\n1:6\n:12:\n18\n:13",
+  "1,-2",
+  "1,-2,5,-6"
 ]
 
 test_data.each do |str|
-  puts "String: #{str.inspect}"
+  puts "Input String: #{str.inspect}"
   result = StringParser.add(str)
   puts "Output: #{result}"
   puts "----------"
