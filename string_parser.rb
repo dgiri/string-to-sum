@@ -6,10 +6,12 @@ class StringParser
       # if input like '2,3,4' then removes quote
       cleaned_input = num_str.gsub(/^['"]|['"]$/, '')
 
-      # if input have \n or keyboard enter
-      filter_input = cleaned_input.gsub(/\\n|\n/, ',')
+      delimiter = ','
 
-      filter_input.split(',').map(&:to_i).sum
+      # if input have \n or keyboard enter
+      filter_input = cleaned_input.gsub(/\\n|\n/, delimiter)
+
+      filter_input.split(delimiter).map(&:to_i).sum
     end
   end
 end
